@@ -1,2 +1,0 @@
-tqdm-joblib==0.0.3
-lightning==2.1.3
