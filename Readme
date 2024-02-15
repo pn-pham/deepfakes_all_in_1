@@ -1,1 +1,83 @@
-readme
+1. Text-To-Speech
+
+Instruction for User
+- Input File: .txt
+- Output File: .wav
+- Properties and Rules to consider during creation of Input File (Script) from technical point of view:
+  - English
+  - Including of simple sentences, mathematical equation, abbreviations, and especial symbol.
+
+Rules that are compulsory to follow them during the writing of input .txt file:
+- For abbreviations write them in separate letters or texts with spaces!
+  - e.g., THWS -> T H W S
+- Special symbols in letter:
+  - ∑: Summation
+  - ∫: Integral 
+  - £, €, and so on: Pound, Euro, and so on.
+  - ©: Copyright
+  - ™: Trademark 
+- For mathematics operators, check the Dictionary!
+- Commas create a gap in the speech. If you don’t want to hear the gap, just remove it even if it is grammatically correct.
+- _: It is pronounced by the model. If you don’t want to hear it, you should replace it with the space.
+- , ; : .: These are not pronounced by the model. Just generate the same gap in the speech.
+- For Email addresses user needs to write them in separate tokens.
+  - e.g., abc@gmail.com -> abc @ gmail dot com
+
+Dictionary for the words that user can use it and list of some signs that can leave them as they are:
+Signs   Text forms       Signs   Text forms
++       Plus            >=      Greater and equal than
+-       Minus           <=      Less and equal than
+*       Times           .       Dot
+/       Divided by or over     #       Hashtag
+=       Equals          ^       Into the power of
+>       Greater than    £       Pounds
+<       Less than
+
+Signs pronounced by the model: $, %, &, @, #, °, /, \
+Signs not pronounced by the model: :, ;, !, " ", ' ', ,, -, ?, ' () [] {} § ` ´ ¬ ~ |
+
+2. Voice Conversion
+
+Instruction for User
+- Input Files:
+  - First Input Audio:
+    - .wav
+    - English
+    - at least 20 min speech of desired voice
+  - Second Input Audio:
+    - output .wav file from tts
+    - English
+- Output File: .wav
+
+3. Lip Sync
+
+Instruction for User
+- Input Files:
+  - Input Video:
+    - .mp4
+    - Without lip movements
+    - at least 2 min
+  - Input Audio:
+    - .wav
+    - English
+    - at least 2 min
+- Output File: .mp4
+
+4. How to run the whole framework via commands:
+
+1. Text to Speech part
+!python deepfakes.py tts-bark
+
+2. Voice conversion part
+!python deepfakes.py vc-infer
+
+3. Lip sync part
+!python deepfakes.py lip-sync
+
+
+Command for training the voice conversion part (if you want to retrain voice conversion model again you can run this command, but this is not necessary!)
+1.Voice conversion pre-processing
+!python deepfakes.py vc-pre-processing
+
+2.Voice conversion training 
+!python deepfakes.py vc-train --max-epoch 5000
