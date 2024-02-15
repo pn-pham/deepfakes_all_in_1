@@ -3,14 +3,14 @@
 Instruction for User
 - Input File: .txt
 - Output File: .wav
-- Properties and Rules to consider during creation of Input File (Script) from technical point of view:
+- Properties and Rules to consider during the creation of the Input File (Script) from a technical point of view:
   - English
-  - Including of simple sentences, mathematical equation, abbreviations, and especial symbol.
+  - Including simple sentences, mathematical equations, abbreviations, and special symbols.
 
-Rules that are compulsory to follow them during the writing of input .txt file:
+Rules that are compulsory to follow during the writing of input .txt file:
 - For abbreviations write them in separate letters or texts with spaces!
   - e.g., THWS -> T H W S
-- Special symbols in letter:
+- Special symbols in letters:
   - ∑: Summation
   - ∫: Integral 
   - £, €, and so on: Pound, Euro, and so on.
