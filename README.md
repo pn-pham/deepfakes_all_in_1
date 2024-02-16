@@ -32,6 +32,8 @@ https://github.com/pn-pham/deepfakes_all_in_1/assets/130674444/1c2480a3-4417-406
   pip install torch==2.1.2+cu118 torchvision==0.16.2+cu118 torchaudio==2.1.2+cu118 --index-url https://download.pytorch.org/whl/cu118
 
   pip install -r requirements.txt
+
+  python deepfakes.py init
 ```
 
 3. Install [espeak-ng](https://pypi.org/project/espeakng/) to enable text-to-speech synthesizer.
