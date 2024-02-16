@@ -11,6 +11,8 @@ steps: Text-to-Speech, Voice Conversion, and Lip-Sync. The pipeline uses open-so
 
 # Demo
 
+Example text: "A large language model is a deep learning algorithm that can perform a variety of natural language processing tasks. Large language models use transformer models and are trained using massive datasets. This enables them to recognize, translate, predict, or generate text or other content."
+
 https://github.com/pn-pham/deepfakes_all_in_1/assets/130674444/1c2480a3-4417-4062-965b-9e2c080ea192
 
 ## Installation
