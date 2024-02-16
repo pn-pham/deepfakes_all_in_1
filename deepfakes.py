@@ -14,7 +14,7 @@ from pathlib import Path
 # from text_to_speech.TTS.api import TTS
 import so_vits_svc_fork.__main__ as so_vits_svc_fork
 from lip_sync.video_retalking import inference as lip_syn_infer
-from audio_seg import audio_slicer
+# from audio_seg import audio_slicer
 from text_to_speech.bark.api import semantic_to_waveform
 from text_to_speech.bark import generate_audio, SAMPLE_RATE
 from text_to_speech.bark.generation import generate_text_semantic, preload_models
@@ -61,6 +61,23 @@ patch_wrap_text()
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"], show_default=True)
 click.Context.formatter_class = RichHelpFormatter
 
+@click.group(context_settings=CONTEXT_SETTINGS)
+def cli():
+    pass
+
+@cli.command()
+def init():
+    os.makedirs("./data/input/text", exist_ok=True)
+    os.makedirs("./data/input/video", exist_ok=True)
+    os.makedirs("./data/tts", exist_ok=True)
+    os.makedirs("./data/vc", exist_ok=True)
+    os.makedirs("./data/lip_sync", exist_ok=True)
+    os.makedirs("./data/vc_train/audio", exist_ok=True)
+    os.makedirs("./data/vc_train/configs", exist_ok=True)
+    os.makedirs("./data/vc_train/dataset_raw", exist_ok=True)
+    os.makedirs("./data/vc_train/filelists", exist_ok=True)
+    os.makedirs("./data/vc_train/model", exist_ok=True)
+
 ######################################
 ### text to speech using pyttsx3  ####
 ######################################
@@ -87,10 +104,6 @@ click.Context.formatter_class = RichHelpFormatter
 #         text = file.read()
 #     engine.save_to_file(text, output_file)
 #     engine.runAndWait()
-
-@click.group(context_settings=CONTEXT_SETTINGS)
-def cli():
-    pass
 
 # @cli.command()
 # @click.option(
