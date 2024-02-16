@@ -51,7 +51,7 @@ If the installation with ```pip``` doesn't work, please use ```sudo apt-get```.
 
 1. Prepare voice recordings of a target voice with any speech content. The total length of recordings is recommended at least 20 minutes to achieve an acceptable performance.
 
-2. Place the recordings in folder ./data/vc_train/input_audio.
+2. Place the recordings in folder `./data/vc_train/input_audio`.
 
 3. Run the command below to pre-process the data.
 ```bash
@@ -78,7 +78,7 @@ python deepfakes.py tts-bark
 python deepfakes.py tts-bark --input-path ./path-to-file/audio.wav
 ```
 
-The output audio will be store in folder ./data/tts.
+The output audio will be store in folder `./data/tts`.
 
 ### 2. Voice conversion
 
@@ -91,7 +91,7 @@ python deepfakes.py vc-infer
 ```bash
 python deepfakes.py vc-infer --input-path ./path-to-file/audio.wav
 ```
-  Note that, the latest trained model in folder ./data/vc_train/model is used by default. To use a specific trained model (e.g. G_5000.pth), please include ```--model-path``` as follows:
+  Note that, the latest trained model in folder `./data/vc_train/model` is used by default. To use a specific trained model (e.g. G_5000.pth), please include ```--model-path``` as follows:
 ```bash
 python deepfakes.py vc-infer --model-path ./data/vc_train/model/G_5000.pth
 ```
