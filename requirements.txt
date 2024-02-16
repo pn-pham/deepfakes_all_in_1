@@ -1,0 +1,34 @@
+click==8.1.7
+librosa==0.10.1
+# fsspec==2024.2.0
+tqdm==4.66.2
+# coqpit==0.0.17
+# trainer==0.0.36
+# pysbd==0.3.4
+# mutagen==1.47.0
+# pandas==2.2.0
+# matplotlib==3.8.3
+# anyascii==0.3.2
+# inflect==7.0.0
+# bangla==0.0.2
+# bnnumerizer==0.0.2
+rich==13.7.0
+cm_time==0.1.2
+transformers==4.37.2
+opencv-python==4.9.0.80
+scikit-image==0.22.0
+face_alignment==1.4.1
+ninja==1.11.1.1
+basicsr==1.4.2
+einops==0.7.0
+kornia==0.7.1
+facexlib==0.3.0
+dlib==19.24.2
+encodec==0.1.1
+funcy==2.0
+nltk==3.8.1
+tqdm_joblib==0.0.3
+torchcrepe==0.0.22
+pyworld==0.3.4
+lightning==2.2.0.post0
+noisereduce==3.0.0

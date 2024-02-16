@@ -28,7 +28,7 @@ import warnings
 warnings.filterwarnings("ignore")
 args = options(base_dir=os.path.dirname(__file__))
 
-def inference(face_path, audio_path, outfile, cache_dir):
+def inference(face_path, audio_path, outfile, cache_dir, start_frame = None):
     base_dir = os.path.dirname(__file__)
     args.face = face_path
     args.audio = audio_path
@@ -201,10 +201,14 @@ def inference(face_path, audio_path, outfile, cache_dir):
     print("[Step 4] Load audio; Length of mel chunks: {}".format(len(mel_chunks)))
     ####
     # random select a segment in the video
-    if len(imgs) > len(mel_chunks): # video is longer than audio
-        start = random.randint(0, len(imgs)-len(mel_chunks))
-    else: # video is shorter than audio
-        start = random.randint(0, len(imgs)) 
+    if start_frame == None:
+        if len(imgs) > len(mel_chunks): # video is longer than audio
+            start = random.randint(0, len(imgs)-len(mel_chunks))
+        else: # video is shorter than audio
+            start = random.randint(0, len(imgs))
+    else:
+        start = start_frame
+
     
     imgs = imgs[start:start+len(mel_chunks)]
     full_frames = full_frames[start:start+len(mel_chunks)]  

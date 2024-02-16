@@ -81,7 +81,8 @@ logger = logging.getLogger(__name__)
 CUR_PATH = os.path.dirname(os.path.abspath(__file__))
 
 
-default_cache_dir = os.path.join(os.path.expanduser("~"), ".cache")
+# default_cache_dir = os.path.join(os.path.expanduser("~"), ".cache")
+default_cache_dir = os.path.join(CUR_PATH, "cache")
 CACHE_DIR = os.path.join(os.getenv("XDG_CACHE_HOME", default_cache_dir), "suno", "bark_v0")
 
 
