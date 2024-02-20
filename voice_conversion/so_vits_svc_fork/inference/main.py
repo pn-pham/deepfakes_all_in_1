@@ -107,7 +107,7 @@ def infer(
                 max_chunk_seconds=max_chunk_seconds,
             )
             # remove noise
-            reduced_noise = nr.reduce_noise(y = audio, sr=44100, n_std_thresh_stationary=0.1,stationary=True)
+            reduced_noise = nr.reduce_noise(y = audio, sr=44100, n_std_thresh_stationary=1.0,stationary=True)
             
             soundfile.write(str(output_path), reduced_noise, svc_model.target_sample)
     finally:
