@@ -123,6 +123,28 @@ python deepfakes.py lip-sync --start-frame 10
 ```
 
   The ouput videos are store in folder `./data/lip_sync`
+  
+### 4. Translation
+  1. Prepare one or more German text files for translation.
+  2. Place them in folder ```./data/input/text/german-text```
+  3. Run the following command:
+  ```bash
+  python deepfakes.py translate-text
+  ```
+  The above command will translate  German text file from ./data/input/text/german-text into English, storing the resulting in ./data/input/text.
+
+### 5. Dubbing
+  1. Make sure you have the English audio and the German video ready
+  2. Place the English audio in the folder ```./data/vc```
+  3. Place the German video in the folder ```./data/grinput```
+  4. Run the following command:
+  ```bash
+  python dub.py
+  ```
+The final dubbed video is saved in:
+./data/dub-output/final_dubbed_video.mp4
+
+
 ## Disclaimer
 
 This project is created to use deepfakes for good. Please use this only for good. The authors do not take responsibility for any generated output.
